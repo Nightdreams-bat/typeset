@@ -1,9 +1,9 @@
 ---
-name: pdf-craft
+name: typeset
 description: Produce PDFs and print-quality documents that look designed rather than defaulted. Use whenever the user asks for a PDF, report, memo, proposal, brief, whitepaper, manual, one-pager, or any document meant to be read as a finished artifact - and especially when they say a document looks boring, generic, or "the same as last time".
 ---
 
-# PDF Craft
+# Typeset
 
 Claude's default document is instantly recognizable: Helvetica or Times, a centered bold
 title, an unbroken ladder of H1/H2/H3, bullets everywhere, one blue accent, uniform
@@ -34,7 +34,7 @@ comment at the top of the file. No brief, no document.
 ### 2. Check the ledger, then pick a different style
 
 ```bash
-tail -5 ~/.claude/skills/pdf-craft/.ledger 2>/dev/null
+tail -5 ~/.claude/skills/typeset/.ledger 2>/dev/null
 ```
 
 Do not reuse the most recent house style unless the archetype genuinely demands it. If it
@@ -42,13 +42,13 @@ does, change the page geometry and type pair so the document still reads as its 
 After rendering, append one line:
 
 ```bash
-echo "$(date +%F) | <style> | <doc name>" >> ~/.claude/skills/pdf-craft/.ledger
+echo "$(date +%F) | <style> | <doc name>" >> ~/.claude/skills/typeset/.ledger
 ```
 
 ### 3. Fetch fonts (only if using webfonts)
 
 ```bash
-node ~/.claude/skills/pdf-craft/scripts/getfont.mjs "Newsreader:400,600,400italic" "Sora:600"
+node ~/.claude/skills/typeset/scripts/getfont.mjs "Newsreader:400,600,400italic" "Sora:600"
 ```
 
 Prints `@font-face` CSS pointing at local cached files - paste it into the document's
@@ -57,7 +57,7 @@ Prints `@font-face` CSS pointing at local cached files - paste it into the docum
 ### 4. Render
 
 ```bash
-node ~/.claude/skills/pdf-craft/scripts/topdf.mjs doc.html --out=doc.pdf --margin=20 \
+node ~/.claude/skills/typeset/scripts/topdf.mjs doc.html --out=doc.pdf --margin=20 \
      --header="Document title" [--footer="Confidential"] [--no-number] [--landscape]
 ```
 
@@ -68,7 +68,7 @@ silently fell back to Times.
 ### 5. Verify before reporting done
 
 ```bash
-node ~/.claude/skills/pdf-craft/scripts/checkpdf.mjs doc.pdf
+node ~/.claude/skills/typeset/scripts/checkpdf.mjs doc.pdf
 ```
 
 Confirms page count, page size, and embedded fonts. If `TimesNewRoman` appears and you did

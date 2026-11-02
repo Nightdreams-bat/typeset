@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/header.png" alt="pdf-craft" width="100%">
+<img src="assets/header-typeset.png" alt="Typeset" width="100%">
 
 **A Claude Code skill that makes AI-generated PDFs look designed instead of defaulted.**
 
@@ -9,7 +9,7 @@
 ![Dependencies](https://img.shields.io/badge/npm%20dependencies-none-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
-<img src="assets/before-after.png" alt="Default AI document next to the same content rendered with pdf-craft" width="100%">
+<img src="assets/before-after.png" alt="Default AI document next to the same content rendered with Typeset" width="100%">
 
 </div>
 
@@ -21,7 +21,7 @@ You can spot an AI-generated document from across the room: Arial, a centred bol
 ladder of H1/H2/H3, bullets everywhere, one saturated blue. No design decision gets made, so
 the default wins. And when a decision does get made once, it's repeated forever.
 
-pdf-craft fixes both problems. It turns "make me a PDF" into a real typographic brief, and it
+Typeset fixes both problems. It turns "make me a PDF" into a real typographic brief, and it
 keeps a ledger so no two documents come out in the same style.
 
 ## How it works
@@ -62,7 +62,7 @@ These are built into the skill so the agent doesn't have to rediscover them:
 ## Install
 
 ```bash
-git clone https://github.com/Nightdreams-bat/pdf-craft ~/.claude/skills/pdf-craft
+git clone https://github.com/Nightdreams-bat/typeset ~/.claude/skills/typeset
 ```
 
 Requirements: Node 18+ and Chrome or Chromium (or set `CHROME_PATH`). No `npm install`.
